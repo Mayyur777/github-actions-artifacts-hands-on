@@ -18,3 +18,12 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
+
+    - name: Archive text file
+      uses: actions/download-artifact@v4
+      with:
+        name: hello-artifact
+        path: ./artifacts/hello.txt
+    
+    - name: Display message
+      run: cat ./artifacts/hello.txt
